@@ -6,34 +6,35 @@
     }
     .left-text-overlay {
         position: absolute;
-        top: 22%;
-        left: 4%;
-        font-size: 24px;
+        top: 32%;
+        left: 3%;
+        font-size: 40px;
         font-weight: 600;
-        text-transform: uppercase;
+        font-family: "Kaushan Script", cursive;
         line-height: 10vh;
         text-align: center;
         color: #ddff00;
     }
     .right-text-overlay {
         position: absolute;
-        top: 22%;
-        right: 4%;
-        font-size: 24px;
+        top: 32%;
+        right: 3%;
+        font-size: 40px;
         font-weight: 600;
-        text-transform: uppercase;
+        font-family: "Kaushan Script", cursive;
         line-height: 10vh;
         text-align: center;
-        color:#ddff00;
+        color: #ddff00;
         a {
             text-decoration: none;
             color: #ddff00;
             &:hover {
-                color: #00ff26;
+                color:#00ddff;
             }
         }
     }
     .img-overlay-btns {
+        font-family: "Kaushan Script", cursive;
         position: absolute;
         top: 80%;
         left: 0;
