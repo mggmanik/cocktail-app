@@ -1,0 +1,43 @@
+.parent {
+    height: 100%;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+    .left-text-overlay {
+        position: absolute;
+        top: 22%;
+        left: 4%;
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 10vh;
+        text-align: center;
+        color: #ddff00;
+    }
+    .right-text-overlay {
+        position: absolute;
+        top: 22%;
+        right: 4%;
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 10vh;
+        text-align: center;
+        color:#ddff00;
+        a {
+            text-decoration: none;
+            color: #ddff00;
+            &:hover {
+                color: #00ff26;
+            }
+        }
+    }
+    .img-overlay-btns {
+        position: absolute;
+        top: 80%;
+        left: 0;
+        right: 0;
+        bottom: 14%;
+    }
+}

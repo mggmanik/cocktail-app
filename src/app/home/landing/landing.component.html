@@ -1,0 +1,17 @@
+<div class="parent">
+    <div class="left-text-overlay">
+        <p>Have a look at the most <br> Popular Drinks we provide below !</p>
+    </div>
+    <div class="right-text-overlay">
+        <p>Or <a href="www.google.com">Click Here</a> <br> to browse through all the drinks !</p>
+    </div>
+    <img src='../../../assets/home.jfif'>
+    <div class="d-flex justify-content-around img-overlay-btns">
+        <button type="button" class="btn btn-dark px-5 py-2 text-uppercase"
+            (click)="fetchDrinksByCategory('Cocktail')">Cocktails</button>
+        <button type="button" class="btn btn-dark px-5 py-2 text-uppercase"
+            (click)="fetchDrinksByCategory('Shot')">Shots</button>
+        <button type="button" class="btn btn-dark px-5 py-2 text-uppercase"
+            (click)="fetchDrinksByCategory('Beer')">Beers</button>
+    </div>
+</div>
