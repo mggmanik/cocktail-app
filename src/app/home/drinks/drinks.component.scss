@@ -1,10 +1,11 @@
 .wrapper {
-    height: 100%;
-    background: #c0ccc9;
+    // height: 100%;
+    // background: #c0ccc9;
     font-family: "Kalam", cursive;
     .heading {
         font-size: 56px;
         font-weight: 600;
+        line-height: 8vh;
         text-align: center;
     }
     .search {
@@ -27,11 +28,32 @@
         .left {
             background: white;
             width: 20%;
+            height: max-content;
         }
         .right {
             background: white;
-            height: 200px;
             width: 80%;
+            height: max-content;
+            .drinkDiv {
+                cursor: pointer;
+                &:hover {
+                    p {
+                        color: #2ded2d;
+                    }
+                }
+                .imageDiv {
+                    img {
+                        // border-style: solid;
+                        // border-width: thick;
+                        // border-color: coral;
+                        border-radius: 10px;
+                        width: 240px;
+                    }
+                }
+                p {
+                    font-size: 20px;
+                }
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <div class="heading py-5">
+    <div class="heading py-4">
         <p>Welcome to the Cocktail App</p>
     </div>
     <div class="search">
@@ -15,7 +15,8 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <mat-action-list>
-                        <button *ngFor="let filter of baseFilters" mat-list-item> {{filter?.strAlcoholic}}
+                        <button *ngFor="let filter of baseFilters" mat-list-item
+                            (click)="onFetchDrinks('a',filter.strAlcoholic)"> {{filter?.strAlcoholic}}
                             <mat-divider></mat-divider>
                         </button>
                     </mat-action-list>
@@ -23,11 +24,12 @@
                 <mat-expansion-panel>
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            <strong>Category</strong>
+                            <strong>Categories</strong>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <mat-action-list>
-                        <button *ngFor="let filter of categoryFilters" mat-list-item> {{filter?.strCategory}}
+                        <button *ngFor="let filter of categoryFilters" mat-list-item
+                            (click)="onFetchDrinks('c',filter.strCategory)"> {{filter?.strCategory}}
                             <mat-divider></mat-divider>
                         </button>
                     </mat-action-list>
@@ -39,7 +41,8 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <mat-action-list>
-                        <button *ngFor="let filter of ingredientsFilters" mat-list-item> {{filter?.strIngredient1}}
+                        <button *ngFor="let filter of ingredientsFilters" mat-list-item
+                            (click)="onFetchDrinks('i',filter.strIngredient1)"> {{filter?.strIngredient1}}
                             <mat-divider></mat-divider>
                         </button>
                     </mat-action-list>
@@ -51,15 +54,24 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <mat-action-list>
-                        <button *ngFor="let filter of glassFilters" mat-list-item> {{filter?.strGlass}}
+                        <button *ngFor="let filter of glassFilters" mat-list-item
+                            (click)="onFetchDrinks('g',filter.strGlass)"> {{filter?.strGlass}}
                             <mat-divider></mat-divider>
                         </button>
                     </mat-action-list>
                 </mat-expansion-panel>
             </mat-accordion>
         </div>
-        <!-- <div class="right m-2">
-            <p>jddh</p>
-        </div> -->
+        <div class="right m-2 row">
+            <div *ngIf="drinks.length === 0" class="heading py-5">
+                <p>So Sorry... No Drinks for that filter !</p>
+            </div>
+            <div class="drinkDiv p-4 col-sm-3" *ngFor="let drink of drinks">
+                <div class="imageDiv">
+                    <img [src]="drink.strDrinkThumb">
+                </div>
+                <p class="text-center mt-2">{{drink.strDrink}}</p>
+            </div>
+        </div>
     </div>
 </div>

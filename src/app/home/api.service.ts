@@ -22,4 +22,11 @@ export class ApiService {
       .set(filterName, 'list');
     return this.http.get<any>(`${environment.apiUrl}/list.php`, { params });
   }
+
+  // fetch drinks by selected filter
+  fetchDrinksBySelectedFilter(filter, selectedItem) {
+    const params = new HttpParams()
+      .set(filter, selectedItem);
+    return this.http.get<any>(`${environment.apiUrl}/filter.php`, { params });
+  }
 }

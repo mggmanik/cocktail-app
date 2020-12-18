@@ -13,6 +13,8 @@ export class DrinksComponent implements OnInit {
   ingredientsFilters = [];
   glassFilters = [];
 
+  drinks = [];
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
@@ -36,6 +38,12 @@ export class DrinksComponent implements OnInit {
       else if (filterName === 'g') {
         this.glassFilters = [...res.drinks]
       }
+    })
+  }
+
+  onFetchDrinks(filter, selectedItem) {
+    this.apiService.fetchDrinksBySelectedFilter(filter, selectedItem).subscribe(res => {
+      this.drinks = res.drinks;
     })
   }
 
