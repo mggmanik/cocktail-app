@@ -22,4 +22,11 @@ export class ApiService {
       .set(filter, selectedItem);
     return this.http.get<any>(`${environment.apiUrl}/filter.php`, { params });
   }
+
+  // search drinks
+  searchDrinks(searchValue) {
+    const params = new HttpParams()
+      .set('s', searchValue);
+    return this.http.get<any>(`${environment.apiUrl}/search.php`, { params });
+  }
 }

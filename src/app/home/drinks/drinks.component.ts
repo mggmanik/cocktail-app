@@ -1,23 +1,31 @@
-import { ApiService } from './../api.service';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { fromEvent } from 'rxjs';
+import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
+import { ApiService } from './../api.service';
 
 @Component({
   selector: 'app-drinks',
   templateUrl: './drinks.component.html',
   styleUrls: ['./drinks.component.scss']
 })
-export class DrinksComponent implements OnInit {
+export class DrinksComponent implements OnInit, AfterViewInit {
 
+  // all the filters in the left
   baseFilters = [];
   categoryFilters = [];
   ingredientsFilters = [];
   glassFilters = [];
 
+  // populate drinks array
   drinks = [];
 
+  // for showing spinner
   isLoading = true;
+
+  // for getting access to the input for searching
+  @ViewChild('input') input: ElementRef;
 
   constructor(
     private apiService: ApiService,
@@ -36,6 +44,36 @@ export class DrinksComponent implements OnInit {
       const selectedItem = paramMap.get(filter[0]);
       this.onFetchDrinks(filter[0], selectedItem);
     })
+  }
+
+
+  ngAfterViewInit() {
+    fromEvent(this.input.nativeElement, 'keyup')
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        tap((text) => {
+          const searchValue = this.input.nativeElement.value;
+          if (searchValue) {
+            this.isLoading = true;
+            this.apiService.searchDrinks(searchValue).subscribe(res => {
+              if (res && res.drinks) {
+                this.drinks = res.drinks;
+                this.isLoading = false;
+              }
+              else {
+                this.isLoading = false;
+                this.matSnackbar.open('Try Searching or Filter through the left !', 'OK', { duration: 3000 })
+              }
+            })
+          }
+          else {
+            this.drinks = [];
+            this.matSnackbar.open('Try Searching or Filter through the left !', 'OK', { duration: 3000 })
+          }
+        })
+      )
+      .subscribe();
   }
 
   fetchFilters(filterName) {
@@ -64,7 +102,7 @@ export class DrinksComponent implements OnInit {
       }
       else {
         this.isLoading = false;
-        this.matSnackbar.open('Some Problem Occurred.. Please Try Again !', 'OK', { duration: 3000 })
+        this.matSnackbar.open('Try Searching or Filter through the left !', 'OK', { duration: 3000 })
       }
     })
   }

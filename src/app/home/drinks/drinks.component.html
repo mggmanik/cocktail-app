@@ -3,7 +3,7 @@
         <p>Welcome to the Cocktail App</p>
     </div>
     <div class="search">
-        <input type="text" placeholder="Search Drinks" />
+        <input type="text" placeholder="Search Drinks" #input />
     </div>
     <div class="main d-flex w-100 py-5">
         <div class="left m-2">
@@ -67,7 +67,7 @@
         </div>
         <div class="right m-2 row" *ngIf="!isLoading">
             <div *ngIf="drinks.length === 0" class="heading py-5">
-                <p>So Sorry... No Drinks for that filter !</p>
+                <p>So Sorry... No Drinks for your Search !</p>
             </div>
             <div class="drinkDiv p-4 col" *ngFor="let drink of drinks">
                 <div class="imageDiv">
