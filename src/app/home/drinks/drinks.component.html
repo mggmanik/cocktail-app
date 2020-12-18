@@ -3,7 +3,7 @@
         <p>Welcome to the Cocktail App</p>
     </div>
     <div class="search">
-        <input type="text" placeholder="Search Drinks" #input />
+        <input type="text" placeholder="Search Drinks" #input [(ngModel)]="searchText" />
     </div>
     <div class="main d-flex w-100 py-5">
         <div class="left m-2">
@@ -70,11 +70,16 @@
                 <p>So Sorry... No Drinks for your Search !</p>
             </div>
             <div class="drinkDiv p-4 col" *ngFor="let drink of drinks">
-                <div class="imageDiv">
+                <div class="imageDiv text-center">
                     <img [src]="drink.strDrinkThumb">
+                    <p class="mt-2">{{drink.strDrink}}</p>
                 </div>
-                <p class="mt-2">{{drink.strDrink}}</p>
             </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div *ngFor="let letter of alphabets">
+            <p class="px-2 h4 alphabet" (click)="fetchDrinksByFirstLetter(letter)">{{letter}}</p>
         </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './../angular-material.module';
 import { DrinksComponent } from './drinks/drinks.component';
 import { HomeRoutingModule } from './home-routing.module';
@@ -12,7 +13,8 @@ import { LandingComponent } from './landing/landing.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

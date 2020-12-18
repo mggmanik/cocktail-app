@@ -21,11 +21,15 @@ export class DrinksComponent implements OnInit, AfterViewInit {
   // populate drinks array
   drinks = [];
 
+  // alphabets array
+  alphabets = [];
+
   // for showing spinner
   isLoading = true;
 
   // for getting access to the input for searching
   @ViewChild('input') input: ElementRef;
+  searchText: string;
 
   constructor(
     private apiService: ApiService,
@@ -38,6 +42,7 @@ export class DrinksComponent implements OnInit, AfterViewInit {
     this.fetchFilters('g');
     this.fetchFilters('i');
     this.fetchFilters('a');
+    this.populateAlphabets();
 
     this.route.queryParamMap.subscribe(paramMap => {
       const filter = { ...paramMap.keys };
@@ -63,6 +68,7 @@ export class DrinksComponent implements OnInit, AfterViewInit {
               }
               else {
                 this.isLoading = false;
+                this.drinks = [];
                 this.matSnackbar.open('Try Searching or Filter through the left !', 'OK', { duration: 3000 })
               }
             })
@@ -94,6 +100,7 @@ export class DrinksComponent implements OnInit, AfterViewInit {
   }
 
   onFetchDrinks(filter, selectedItem) {
+    this.searchText = '';
     this.isLoading = true;
     this.apiService.fetchDrinksBySelectedFilter(filter, selectedItem).subscribe(res => {
       if (res && res.drinks) {
@@ -102,6 +109,33 @@ export class DrinksComponent implements OnInit, AfterViewInit {
       }
       else {
         this.isLoading = false;
+        this.drinks = [];
+        this.matSnackbar.open('Try Searching or Filter through the left !', 'OK', { duration: 3000 })
+      }
+    })
+  }
+
+  populateAlphabets() {
+    let i = 65;
+    let j = 91;
+
+    for (let k = i; k < j; k++) {
+      const letter = String.fromCharCode(k);
+      this.alphabets.push(letter);
+    }
+  }
+
+  fetchDrinksByFirstLetter(letter) {
+    this.searchText = '';
+    this.isLoading = true;
+    this.apiService.searchDrinksByFirstLetter(letter).subscribe(res => {
+      if (res && res.drinks) {
+        this.drinks = res.drinks;
+        this.isLoading = false;
+      }
+      else {
+        this.isLoading = false;
+        this.drinks = [];
         this.matSnackbar.open('Try Searching or Filter through the left !', 'OK', { duration: 3000 })
       }
     })

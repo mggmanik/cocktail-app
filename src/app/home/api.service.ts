@@ -29,4 +29,11 @@ export class ApiService {
       .set('s', searchValue);
     return this.http.get<any>(`${environment.apiUrl}/search.php`, { params });
   }
+
+  // search drinks by first letter
+  searchDrinksByFirstLetter(letter) {
+    const params = new HttpParams()
+      .set('f', letter);
+    return this.http.get<any>(`${environment.apiUrl}/search.php`, { params });
+  }
 }
