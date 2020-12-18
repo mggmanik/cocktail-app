@@ -8,15 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-
-  fetchDrinksByCategory(category: string) {
-    this.apiService.fetchDrinksByCategory(category).subscribe(res => {
-      console.log(res);
-    })
-  }
-
 }
