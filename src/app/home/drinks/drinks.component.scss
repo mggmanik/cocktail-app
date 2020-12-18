@@ -1,0 +1,49 @@
+.wrapper {
+    height: 100%;
+    background: #c0ccc9;
+    font-family: "Kalam", cursive;
+    .heading {
+        font-size: 56px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .search {
+        text-align: center;
+        input {
+            height: 48px;
+            width: 30vw;
+            border-radius: 20px;
+            border: none;
+            font-size: 1rem;
+            padding-left: 16px;
+            background: white url(../../../assets/search.png) no-repeat;
+            background-position: 96%;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .main {
+        .left {
+            background: white;
+            width: 20%;
+        }
+        .right {
+            background: white;
+            height: 200px;
+            width: 80%;
+        }
+    }
+}
+
+mat-expansion-panel {
+    margin: 8px;
+}
+
+.mat-expansion-panel-header-title {
+    font-family: "Kalam", cursive;
+}
+
+.mat-list-item {
+    font-family: "Kalam", cursive;
+}

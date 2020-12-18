@@ -13,6 +13,13 @@ export class ApiService {
   fetchDrinksByCategory(category) {
     const params = new HttpParams()
       .set('c', category);
-    return this.http.get<any>(`${environment.apiUrl}/filter.php`, { params })
+    return this.http.get<any>(`${environment.apiUrl}/filter.php`, { params });
+  }
+
+  // list all filters
+  listFilterByFilterName(filterName) {
+    const params = new HttpParams()
+      .set(filterName, 'list');
+    return this.http.get<any>(`${environment.apiUrl}/list.php`, { params });
   }
 }

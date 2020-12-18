@@ -1,0 +1,65 @@
+<div class="wrapper">
+    <div class="heading py-5">
+        <p>Welcome to the Cocktail App</p>
+    </div>
+    <div class="search">
+        <input type="text" placeholder="Search Drinks" />
+    </div>
+    <div class="main d-flex w-100 py-5">
+        <div class="left m-2">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <strong>Bases</strong>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-action-list>
+                        <button *ngFor="let filter of baseFilters" mat-list-item> {{filter?.strAlcoholic}}
+                            <mat-divider></mat-divider>
+                        </button>
+                    </mat-action-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <strong>Category</strong>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-action-list>
+                        <button *ngFor="let filter of categoryFilters" mat-list-item> {{filter?.strCategory}}
+                            <mat-divider></mat-divider>
+                        </button>
+                    </mat-action-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <strong>Ingredients</strong>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-action-list>
+                        <button *ngFor="let filter of ingredientsFilters" mat-list-item> {{filter?.strIngredient1}}
+                            <mat-divider></mat-divider>
+                        </button>
+                    </mat-action-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <strong>Glasses</strong>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-action-list>
+                        <button *ngFor="let filter of glassFilters" mat-list-item> {{filter?.strGlass}}
+                            <mat-divider></mat-divider>
+                        </button>
+                    </mat-action-list>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <!-- <div class="right m-2">
+            <p>jddh</p>
+        </div> -->
+    </div>
+</div>
