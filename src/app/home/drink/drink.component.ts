@@ -56,6 +56,7 @@ export class DrinkComponent implements OnInit {
           this.isLoading = false;
         }
         else {
+          this.isLoading = false;
           this.matSnackBar.open('No Drink Found !', 'OK', { duration: 3000 })
         }
       })
