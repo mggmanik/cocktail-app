@@ -1,3 +1,4 @@
+import { ApiService } from './../api.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,5 +32,10 @@ describe('DrinkComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display spinner for the first time ', () => {
+    const spinner = fixture.debugElement.nativeElement.querySelector('#spinner');
+    expect(spinner).toBeDefined();
   });
 });
