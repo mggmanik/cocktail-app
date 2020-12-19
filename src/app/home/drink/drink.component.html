@@ -16,7 +16,8 @@
                     <div class="imageDiv text-center" [routerLink]="['/home/drinks/']"
                         [queryParams]="{ i: ingredient.ingredient}">
                         <img [src]="imgUrl + ingredient?.ingredient + '-Small.png'">
-                        <p class="mt-2">{{ingredient?.measure + " " + ingredient?.ingredient}}</p>
+                        <p class="mt-2">{{(ingredient?.measure ? ingredient?.measure : "") + " " +
+                            ingredient?.ingredient}}</p>
                     </div>
                 </div>
             </div>
