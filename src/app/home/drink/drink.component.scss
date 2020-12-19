@@ -1,0 +1,59 @@
+.wrapper {
+    .main {
+        padding: 56px;
+        .left {
+            width: 32%;
+            img {
+                width: 400px;
+                border-radius: 10px;
+            }
+            p {
+                font-size: 36px;
+                font-weight: 600;
+                line-height: 6vh;
+            }
+        }
+        .right {
+            width: 78%;
+            .drinkDiv {
+                cursor: pointer;
+                height: max-content;
+                &:hover {
+                    p {
+                        color: #ffff00;
+                    }
+                }
+                .imageDiv {
+                    img {
+                        text-align: center;
+                        border-radius: 10px;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                p {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        .main {
+            width: 100%;
+            flex-direction: column;
+            .left {
+                width: 50%;
+                img {
+                    width: 320px;
+                }
+            }
+            .right {
+                width: 50%;
+            }
+        }
+    }
+}

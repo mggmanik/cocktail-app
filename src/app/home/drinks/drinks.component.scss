@@ -1,7 +1,7 @@
 .wrapper {
     // height: 100%;
     // background: #c0ccc9;
-    font-family: "Kalam", cursive;
+    // font-family: "Kalam", cursive;
     .heading {
         font-size: 56px;
         font-weight: 600;
@@ -49,6 +49,9 @@
                         text-align: center;
                         border-radius: 10px;
                         width: 240px;
+                    }
+                    &:focus {
+                        outline: none;
                     }
                 }
                 p {
