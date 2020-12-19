@@ -36,4 +36,11 @@ export class ApiService {
       .set('f', letter);
     return this.http.get<any>(`${environment.apiUrl}/search.php`, { params });
   }
+
+  // fetch drink by id
+  fetchDrinkById(id) {
+    const params = new HttpParams()
+      .set('i', id);
+    return this.http.get<any>(`${environment.apiUrl}/lookup.php`, { params });
+  }
 }

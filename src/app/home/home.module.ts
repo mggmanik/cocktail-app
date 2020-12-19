@@ -5,11 +5,12 @@ import { AngularMaterialModule } from './../angular-material.module';
 import { DrinksComponent } from './drinks/drinks.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { LandingComponent } from './landing/landing.component';
+import { DrinkComponent } from './drink/drink.component';
 
 
 
 @NgModule({
-  declarations: [LandingComponent, DrinksComponent],
+  declarations: [LandingComponent, DrinksComponent, DrinkComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

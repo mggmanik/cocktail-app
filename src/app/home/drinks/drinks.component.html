@@ -7,6 +7,7 @@
     </div>
     <div class="main d-flex w-100 py-5">
         <div class="left m-2">
+            <p class="px-2 h5"><strong>Filters</strong></p>
             <mat-accordion>
                 <mat-expansion-panel>
                     <mat-expansion-panel-header>
@@ -70,13 +71,14 @@
                 <p>So Sorry... No Drinks for your Search !</p>
             </div>
             <div class="drinkDiv p-4 col" *ngFor="let drink of drinks">
-                <div class="imageDiv text-center">
+                <div class="imageDiv text-center" [routerLink]="['/home/drink/',drink.idDrink]">
                     <img [src]="drink.strDrinkThumb">
                     <p class="mt-2">{{drink.strDrink}}</p>
                 </div>
             </div>
         </div>
     </div>
+    <mat-divider class="py-2"></mat-divider>
     <div class="d-flex justify-content-center">
         <div *ngFor="let letter of alphabets">
             <p class="px-2 h4 alphabet" (click)="fetchDrinksByFirstLetter(letter)">{{letter}}</p>
