@@ -28,10 +28,10 @@ https://cocktaildbapp.herokuapp.com
 
 ## Description
 
-Drinks/Cocktails can be Viewed, Sorted and Filtered using the (https://www.thecocktaildb.com/api.php) Api/Data Source.
-User can Filter the drinks on Bases, Categories, Ingredients and Glasses.
-User can search real time for the type of drink he/she is looking for.
-User can sort the drinks on the first letter of the drink with the Alphabet Paginator.
-User can view a particular drink and checkout it's ingredients, instruction to make the drink and the glass suitable for the drink.
-Clicking the Ingredient will filter out all the drinks related to it.
-Test cases for various components are provided.
+1. Drinks/Cocktails can be Viewed, Sorted and Filtered using the (https://www.thecocktaildb.com/api.php) Api/Data Source.
+2. User can Filter the drinks on Bases, Categories, Ingredients and Glasses.
+3. User can search real time for the type of drink he/she is looking for.
+4. User can sort the drinks on the first letter of the drink with the Alphabet Paginator.
+5. User can view a particular drink and checkout it's ingredients, instruction to make the drink and the glass suitable for the drink.
+6. Clicking the Ingredient will filter out all the drinks related to it.
+7. Test cases for various components are provided.
