@@ -4,30 +4,35 @@
 <div class="wrapper" *ngIf="!isLoading && drink">
     <div class="main d-flex w-100">
         <div class="left m-2 text-center">
-            <img [src]="drink?.strDrinkThumb">
-            <p class="mt-4">{{drink?.strDrink}}</p>
+            <img [src]="drink?.strDrinkThumb" />
+            <p class="mt-4">{{ drink?.strDrink }}</p>
         </div>
         <div class="right m-2">
             <div class="text-center h1">
-                <p>Ingredients</p>
+                <p><b>Ingredients</b></p>
             </div>
             <div class="row">
                 <div class="drinkDiv col" *ngFor="let ingredient of drink?.ingredients">
                     <div class="imageDiv text-center" [routerLink]="['/home/drinks/']"
-                        [queryParams]="{ i: ingredient.ingredient}">
-                        <img [src]="imgUrl + ingredient?.ingredient + '-Small.png'">
-                        <p class="mt-2">{{(ingredient?.measure ? ingredient?.measure : "") + " " +
-                            ingredient?.ingredient}}</p>
+                        [queryParams]="{ i: ingredient.ingredient }">
+                        <img [src]="imgUrl + ingredient?.ingredient + '-Small.png'" />
+                        <p class="mt-2">
+                            {{
+                            (ingredient?.measure ? ingredient?.measure : "") +
+                            " " +
+                            ingredient?.ingredient
+                            }}
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="row text-center py-2">
-                <p class="h1 py-3">Instructions</p>
-                <p class="h4">{{drink?.strInstructions}}</p>
+                <p class="h1 py-3"><b>Instructions</b></p>
+                <p class="h4">{{ drink?.strInstructions }}</p>
             </div>
             <div class="row text-center py-2">
-                <p class="h1 py-3">Glass</p>
-                <p class="h4">{{drink?.strGlass}}</p>
+                <p class="h1 py-3"><b>Glass</b></p>
+                <p class="h4">{{ drink?.strGlass }}</p>
             </div>
         </div>
     </div>

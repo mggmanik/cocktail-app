@@ -1,18 +1,35 @@
-<div class="parent">
-    <div class="left-text-overlay">
-        <p>Have a look at the most <br> Popular Drinks we provide below</p>
+<div class="container-fluid box">
+    <div class="box__top row justify-content-center px-5">
+        <div class="col-md-5 text-center box__top-text">
+            Have a look at the most <br />
+            Popular Drinks we provide below
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5 text-center box__top-text box2">
+            Or
+            <a routerLink="/home/drinks" [queryParams]="{ a: 'Alcoholic' }">Click Here</a>
+            <br />
+            to browse through all the Drinks
+        </div>
     </div>
-    <div class="right-text-overlay">
-        <p>Or <a routerLink="/home/drinks" [queryParams]="{ a:'Alcoholic'}">Click Here</a> <br> to browse through all
-            the Drinks</p>
-    </div>
-    <img src='../../../assets/home.jfif'>
-    <div class="d-flex justify-content-around img-overlay-btns">
-        <button type="button" class="btn btn-dark px-5 py-2 text-uppercase" routerLink="/home/drinks"
-            [queryParams]="{ c: 'Cocktail'}">Cocktails</button>
-        <button type="button" class="btn btn-dark px-5 py-2 text-uppercase" routerLink="/home/drinks"
-            [queryParams]="{ c: 'Shot'}">Shots</button>
-        <button type="button" class="btn btn-dark px-5 py-2 text-uppercase" routerLink="/home/drinks"
-            [queryParams]="{ c: 'Beer'}">Beers</button>
+    <div class="box__bottom row">
+        <div class="col-md-4 text-center my-2">
+            <button type="button" class="btn btn-dark px-5 py-2 text-uppercase" routerLink="/home/drinks"
+                [queryParams]="{ c: 'Cocktail' }">
+                Cocktails
+            </button>
+        </div>
+        <div class="col-md-4 text-center my-2">
+            <button type="button" class="btn btn-dark px-5 py-2 text-uppercase" routerLink="/home/drinks"
+                [queryParams]="{ c: 'Shot' }">
+                Shots
+            </button>
+        </div>
+        <div class="col-md-4 text-center my-2">
+            <button type="button" class="btn btn-dark px-5 py-2 text-uppercase" routerLink="/home/drinks"
+                [queryParams]="{ c: 'Beer' }">
+                Beers
+            </button>
+        </div>
     </div>
 </div>

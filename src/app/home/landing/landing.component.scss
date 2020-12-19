@@ -1,44 +1,52 @@
-.parent {
-    height: 100%;
-    img {
-        height: 100%;
+.box {
+    background-image: url("../../../assets/home-back.jpg");
+    height: 100vh;
+    background-size: cover;
+    &__top {
+        position: absolute;
+        top: 25vh;
         width: 100%;
-    }
-    .left-text-overlay {
-        position: absolute;
-        top: 32%;
-        left: 3%;
-        font-size: 40px;
-        font-weight: 600;
-        font-family: "Kaushan Script", cursive;
-        line-height: 10vh;
-        text-align: center;
-        color: #ddff00;
-    }
-    .right-text-overlay {
-        position: absolute;
-        top: 32%;
-        right: 3%;
-        font-size: 40px;
-        font-weight: 600;
-        font-family: "Kaushan Script", cursive;
-        line-height: 10vh;
-        text-align: center;
-        color: #ddff00;
-        a {
-            text-decoration: none;
-            color: #ddff00;
-            &:hover {
-                color:#00ddff;
+        &-text {
+            font-size: 40px;
+            font-weight: 600;
+            font-family: "Kaushan Script", cursive;
+            line-height: 10vh;
+            color: #f2f5f7;
+            a {
+                text-decoration: underline;
+                color: #8b8a8a;
+
+                &:hover {
+                    color: #f2f5f7;
+                }
             }
         }
     }
-    .img-overlay-btns {
-        font-family: "Kaushan Script", cursive;
+    &__bottom {
         position: absolute;
-        top: 80%;
-        left: 0;
-        right: 0;
-        bottom: 14%;
+        bottom: 10vh;
+        width: 100%;
+        .btn {
+            font-family: "Kaushan Script", cursive;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .box {
+        &__top {
+            position: absolute;
+            top: 10vh;
+            width: 100%;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            &-text {
+                font-size: 26px;
+                line-height: 7.5vh;
+            }
+            .box2 {
+                margin-top: 2rem;
+            }
+        }
     }
 }

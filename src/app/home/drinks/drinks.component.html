@@ -3,13 +3,13 @@
         <p>Welcome to the Cocktail App</p>
     </div>
     <div class="search">
-        <input type="text" placeholder="Search Drinks" #input [(ngModel)]="searchText" />
+        <input type="text" placeholder="Search Drinks" #input class="shadow" [(ngModel)]="searchText" />
     </div>
     <div class="main d-flex w-100 py-5">
-        <div class="left m-2">
+        <div class="left m-2 rounded pt-2 bg-transparent">
             <p class="px-2 h5"><strong>Filters</strong></p>
             <mat-accordion>
-                <mat-expansion-panel>
+                <mat-expansion-panel class="rounded">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
                             <strong>Bases</strong>
@@ -17,12 +17,13 @@
                     </mat-expansion-panel-header>
                     <mat-action-list>
                         <button *ngFor="let filter of baseFilters" mat-list-item routerLink="/home/drinks"
-                            [queryParams]="{ a: filter.strAlcoholic}"> {{filter?.strAlcoholic}}
+                            [queryParams]="{ a: filter.strAlcoholic }">
+                            {{ filter?.strAlcoholic }}
                             <mat-divider></mat-divider>
                         </button>
                     </mat-action-list>
                 </mat-expansion-panel>
-                <mat-expansion-panel>
+                <mat-expansion-panel class="rounded">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
                             <strong>Categories</strong>
@@ -30,12 +31,13 @@
                     </mat-expansion-panel-header>
                     <mat-action-list>
                         <button *ngFor="let filter of categoryFilters" mat-list-item routerLink="/home/drinks"
-                            [queryParams]="{ c: filter.strCategory}"> {{filter?.strCategory}}
+                            [queryParams]="{ c: filter.strCategory }">
+                            {{ filter?.strCategory }}
                             <mat-divider></mat-divider>
                         </button>
                     </mat-action-list>
                 </mat-expansion-panel>
-                <mat-expansion-panel>
+                <mat-expansion-panel class="rounded">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
                             <strong>Ingredients</strong>
@@ -43,12 +45,13 @@
                     </mat-expansion-panel-header>
                     <mat-action-list>
                         <button *ngFor="let filter of ingredientsFilters" mat-list-item routerLink="/home/drinks"
-                            [queryParams]="{ i: filter.strIngredient1}"> {{filter?.strIngredient1}}
+                            [queryParams]="{ i: filter.strIngredient1 }">
+                            {{ filter?.strIngredient1 }}
                             <mat-divider></mat-divider>
                         </button>
                     </mat-action-list>
                 </mat-expansion-panel>
-                <mat-expansion-panel>
+                <mat-expansion-panel class="rounded">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
                             <strong>Glasses</strong>
@@ -56,7 +59,8 @@
                     </mat-expansion-panel-header>
                     <mat-action-list>
                         <button *ngFor="let filter of glassFilters" mat-list-item routerLink="/home/drinks"
-                            [queryParams]="{ g: filter.strGlass}"> {{filter?.strGlass}}
+                            [queryParams]="{ g: filter.strGlass }">
+                            {{ filter?.strGlass }}
                             <mat-divider></mat-divider>
                         </button>
                     </mat-action-list>
@@ -71,9 +75,9 @@
                 <p>So Sorry... No Drinks for your Search !</p>
             </div>
             <div class="drinkDiv p-4 col" *ngFor="let drink of drinks">
-                <div class="imageDiv text-center" [routerLink]="['/home/drink/',drink.idDrink]">
-                    <img [src]="drink.strDrinkThumb">
-                    <p class="mt-2">{{drink.strDrink}}</p>
+                <div class="imageDiv text-center" [routerLink]="['/home/drink/', drink.idDrink]">
+                    <img [src]="drink.strDrinkThumb" />
+                    <p class="mt-2">{{ drink.strDrink }}</p>
                 </div>
             </div>
         </div>
@@ -81,7 +85,9 @@
     <mat-divider class="py-2"></mat-divider>
     <div class="d-flex justify-content-center">
         <div *ngFor="let letter of alphabets">
-            <p class="px-2 h4 alphabet" (click)="fetchDrinksByFirstLetter(letter)">{{letter}}</p>
+            <p class="px-2 h4 alphabet" (click)="fetchDrinksByFirstLetter(letter)">
+                {{ letter }}
+            </p>
         </div>
     </div>
 </div>

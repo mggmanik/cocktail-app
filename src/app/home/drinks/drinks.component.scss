@@ -1,7 +1,4 @@
 .wrapper {
-    // height: 100%;
-    // background: #c0ccc9;
-    // font-family: "Kalam", cursive;
     .heading {
         font-size: 56px;
         font-weight: 600;
@@ -38,14 +35,11 @@
                 cursor: pointer;
                 &:hover {
                     p {
-                        color: #2ded2d;
+                        color: #8b8a8a;
                     }
                 }
                 .imageDiv {
                     img {
-                        // border-style: solid;
-                        // border-width: thick;
-                        // border-color: coral;
                         text-align: center;
                         border-radius: 10px;
                         width: 240px;
@@ -78,6 +72,7 @@ mat-expansion-panel {
     cursor: pointer;
     font-weight: 600;
     &:hover {
-        color: #ffff00;
+        color: #8b8a8a;
+        text-decoration: underline;
     }
 }
